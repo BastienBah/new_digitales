@@ -4,7 +4,7 @@ class CreateIndefinitions < ActiveRecord::Migration[5.0]
       t.string :mot
       t.text :texte
       t.string :url
-
+      t.belongs_to :variable
       t.timestamps
     end
   end
