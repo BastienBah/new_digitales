@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titre:</strong>
+  <%= @variable.titre %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @variable.description %>
+</p>
+
+<%= link_to 'Edit', edit_variable_path(@variable) %> |
+<%= link_to 'Back', variables_path %>

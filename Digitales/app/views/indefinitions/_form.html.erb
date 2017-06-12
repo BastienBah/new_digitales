@@ -1,0 +1,32 @@
+<%= form_for(indefinition) do |f| %>
+  <% if indefinition.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(indefinition.errors.count, "error") %> prohibited this indefinition from being saved:</h2>
+
+      <ul>
+      <% indefinition.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :mot %>
+    <%= f.text_field :mot %>
+  </div>
+
+  <div class="field">
+    <%= f.label :texte %>
+    <%= f.text_area :texte %>
+  </div>
+
+  <div class="field">
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

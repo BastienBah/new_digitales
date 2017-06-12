@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titre:</strong>
+  <%= @portrait.titre %>
+</p>
+
+<p>
+  <strong>Auteur:</strong>
+  <%= @portrait.auteur %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @portrait.url %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @portrait.description %>
+</p>
+
+<%= link_to 'Edit', edit_portrait_path(@portrait) %> |
+<%= link_to 'Back', portraits_path %>
