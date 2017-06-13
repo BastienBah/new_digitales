@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 20170612085126) do
 
   create_table "indefinitions", force: :cascade do |t|
-    t.string   "mot"
+    t.string   "name"
     t.text     "texte"
     t.string   "url"
     t.integer  "variable_id"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20170612085126) do
   end
 
   create_table "portraits", force: :cascade do |t|
-    t.string   "titre"
+    t.string   "name"
     t.string   "auteur"
     t.string   "url"
     t.string   "description"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20170612085126) do
   end
 
   create_table "variables", force: :cascade do |t|
-    t.string   "titre"
+    t.string   "name"
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
