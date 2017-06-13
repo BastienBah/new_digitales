@@ -4,7 +4,7 @@ class IndefinitionsController < ApplicationController
   # GET /indefinitions
   # GET /indefinitions.json
   def index
-    @indefinitions = Indefinition.all
+    @indefinitions = Indefinition.find_by_sql("SELECT * FROM indefinitions ORDER BY name ASC")
   end
 
   # GET /indefinitions/1
