@@ -14,7 +14,7 @@
   <tbody>
     <% @variables.each do |variable| %>
       <tr>
-        <td><%= variable.titre %></td>
+        <td><%= variable.name %></td>
         <td><%= variable.description %></td>
         <td><%= link_to 'Show', variable %></td>
         <td><%= link_to 'Edit', edit_variable_path(variable) %></td>

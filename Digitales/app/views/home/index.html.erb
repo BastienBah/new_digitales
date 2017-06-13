@@ -1,1 +1,35 @@
-YO TOUT LE MONDE 
+YO TOUT LE MONDE
+
+Derniers portraits:
+
+<table>
+<% @portrait.each do |portrait| %>
+  <tr>
+    <td><%= portrait.name %></td>
+    <td><%= portrait.auteur %></td>
+    <td><%= portrait.url %></td>
+    <td><% portrait.variable.each do |variable| %>
+      <%= link_to variable.name.downcase!, variable_path(variable) %>
+      <% end %> </td>
+    <td><%= link_to 'Show', portrait %></td>
+    <td><%= link_to 'Edit', edit_portrait_path(portrait) %></td>
+    <td><%= link_to 'Destroy', portrait, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+
+Dernieres indefinitions:
+
+<table>
+<% @indefinitions.each do |indefinition| %>
+  <tr>
+    <td><%= indefinition.mot %></td>
+    <td><%= indefinition.texte %></td>
+    <td><%= indefinition.url %></td>
+    <td><%= link_to 'Show', indefinition %></td>
+    <td><%= link_to 'Edit', edit_indefinition_path(indefinition) %></td>
+    <td><%= link_to 'Destroy', indefinition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>

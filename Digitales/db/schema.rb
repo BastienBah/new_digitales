@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170612085126) do
+ActiveRecord::Schema.define(version: 20170613085233) do
 
   create_table "indefinitions", force: :cascade do |t|
     t.string   "name"
@@ -40,11 +40,25 @@ ActiveRecord::Schema.define(version: 20170612085126) do
     t.index ["variable_id"], name: "index_portraits_on_variable_id"
   end
 
+  create_table "portraits_variables", force: :cascade do |t|
+    t.integer "variable_id"
+    t.integer "portrait_id"
+    t.index ["portrait_id"], name: "index_portraits_variables_on_portrait_id"
+    t.index ["variable_id"], name: "index_portraits_variables_on_variable_id"
+  end
+
   create_table "variables", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "variables_indefinitions", force: :cascade do |t|
+    t.integer "variable_id"
+    t.integer "indefinition_id"
+    t.index ["indefinition_id"], name: "index_variables_indefinitions_on_indefinition_id"
+    t.index ["variable_id"], name: "index_variables_indefinitions_on_variable_id"
   end
 
 end
