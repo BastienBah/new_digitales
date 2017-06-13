@@ -1,0 +1,45 @@
+@import "colors";
+
+#home {
+  width: 100vw;
+  .section-landing {
+    height: 100vh;
+    width: 100%;
+    margin: 0 auto;
+    background: url('digitales.gif') center no-repeat;
+    background-size: cover;
+  }
+  .container-portrait, .container-indef {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 150px auto;
+    max-width: 1000px;
+    height: 550px;
+    .paragraph, .section-title {
+      width: 300px;
+    }
+    .content-img {
+      filter: grayscale(1);
+      transition: .25s linear;
+    }
+    &:hover {
+      cursor: pointer;
+      .content-img {
+        filter: grayscale(0);
+      }
+    }
+  }
+}
+
+.down {
+  width: 50px;
+  position: relative;
+  left: 50%;
+  transform: rotateX(50%);
+  margin: 100px auto;
+  animation: down-up 2s infinite;
+}

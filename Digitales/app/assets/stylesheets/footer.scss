@@ -1,0 +1,26 @@
+@import "colors";
+
+footer {
+  position: absolute;
+  bottom: 0;
+  height: 200px;
+  background: $light-blue;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  .right, .left {
+    width: 100%;
+  }
+  .right {
+    ul {
+      vertical-align: middle;
+      list-style: none;
+      li {
+        color: $white;
+        font-weight: 100;
+        text-decoration: underline;
+      }
+    }
+  }
+}
