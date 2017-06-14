@@ -1,0 +1,60 @@
+@import "colors";
+
+.container-portrait, .container-indef {
+  margin: 100px auto;
+  height: 400px;
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  position: relative;
+}
+
+
+.section-presentation {
+  margin: 150px 240px;
+  .paragraph, .section-title {
+    width: 300px;
+  }
+  .content-img {
+    filter: grayscale(1);
+    transition: .25s linear;
+  }
+  &:hover {
+    cursor: pointer;
+    .content-img {
+      filter: grayscale(0);
+    }
+  }
+}
+.content-text {
+  &::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 150px;
+    background: $white;
+    z-index: -1;
+  }
+}
+
+.container-portrait {
+  .content-text {
+    &::before {
+      left: -30px;
+      top: 100px;
+    }
+  }
+}
+.container-indef {
+  .content-text {
+    &::before {
+      right: -30px;
+      top: 100px;
+    }
+  }
+}
