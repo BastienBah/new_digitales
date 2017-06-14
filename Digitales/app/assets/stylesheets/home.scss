@@ -2,44 +2,51 @@
 
 #home {
   width: 100vw;
+
   .section-landing {
     height: 100vh;
     width: 100%;
     margin: 0 auto;
     background: url('digitales.gif') center no-repeat;
     background-size: cover;
-  }
-  .container-portrait, .container-indef {
-    display: -webkit-flex;
-    display: -ms-flex;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    margin: 150px auto;
-    max-width: 1000px;
-    height: 550px;
-    .paragraph, .section-title {
-      width: 300px;
-    }
-    .content-img {
-      filter: grayscale(1);
-      transition: .25s linear;
-    }
-    &:hover {
-      cursor: pointer;
-      .content-img {
-        filter: grayscale(0);
-      }
-    }
-  }
-}
 
-.down {
-  width: 50px;
-  position: relative;
-  left: 50%;
-  transform: rotateX(50%);
-  margin: 100px auto;
-  animation: down-up 2s infinite;
+// Souris indication => scroll-down
+
+    span.scroll-down {
+      display:block;
+      width: 7px;
+      height: 7px;
+      background:#fff;
+      border-radius:50%;
+      margin:15% auto auto auto;
+
+      -webkit-animation: scroll-inner 1.5s;
+      animation: scroll-inner 1.5s;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      -webkit-animation-timing-function:ease;
+      animation-timing-function:ease
+    }
+    div.mouse-container{
+      position:relative;
+      display:block;
+      //border:solid 1px red;
+      height:100px;
+    }
+    div.mouse {
+      position:relative;
+      margin:0 auto;
+      display:block;
+      width: 35px;
+      height: 50px;
+      border: solid 2px #fff;
+      border-radius: 25px;
+      -webkit-animation: scroll-mouse 1.5s;
+      animation: scroll-mouse 1.5s;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      //-webkit-animation-timing-function:ease;
+      //animation-timing-function:ease;
+    }
+  }
 }

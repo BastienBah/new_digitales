@@ -1,3 +1,38 @@
 // Place all the styles related to the Portraits controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#portrait {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  width: 960px;
+  justify-content: flex-end;
+  align-items: center;
+  margin: auto;
+  .title {
+    .paragraph, .section-title {
+      width: 350px;
+      margin-left: 0px;
+    }
+    .section-title {
+      padding-top: 300px;
+    }
+  }
+  .section-indef {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .section-container-portrait {
+    width: 80%;
+    margin-top: 100px;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    flex-wrap: wrap;
+    iframe {
+      width: calc(100%/2);
+    }
+  }
+}

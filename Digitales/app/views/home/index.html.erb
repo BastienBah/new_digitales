@@ -1,26 +1,30 @@
 <div id="home">
 
   <section class="section-landing">
-    <h1 class="section-title-home">digitales c'est</h1>
-    <p class="paragraphe-home">Digitales est une plateforme qui rassemble des récits témoignant de l’impact du numérique dans la vie de chacun. C’est une invitation a explorer l’aventure numérique au travers d’une multitude de portraits internationaux.</p>
-    <%= image_tag "down.png", :class => "down" %>
+    <h1 class="section-title-home">digitales</h1>
+    <!-- <p class="paragraphe-home">Digitales est une plateforme qui rassemble des récits témoignant de l’impact du numérique dans la vie de chacun. C’est une invitation a explorer l’aventure numérique au travers d’une multitude de portraits internationaux.</p> -->
+    <div class='mouse-container'>
+      <div class='mouse'>
+        <span class='scroll-down'></span>
+      </div>
+    </div>
   </section>
 
   <section class="section-presentation">
 
-  <%= link_to  '/portraits' do %>
+  <%= link_to '/portraits' do %>
     <article class="container-portrait">
         <div class="content-text">
           <h2 class="section-title">les portraits</h2>
           <p class="paragraph">Choisissez la dimension qui vous intéresse, vous pourrez ensuite naviguer au travers des portraits ou des indéfinitions liées à ce thème.</p>
         </div>
         <div class="content-img" data-parallax="3" style="transform: translateY(24px);">
-          <%= image_tag 'portrait-show.png' %>
+          <%= image_tag 'portrait-show.jpg' %>
         </div>
     </article>
   <% end %>
 
-  <%= link_to  '/indefinitions' do %>
+  <%= link_to '/indefinitions' do %>
     <article class="container-indef">
         <div class="content-img" data-parallax="1" style="transform: translateY(24px);">
           <%= image_tag 'indef-show.jpg' %>
@@ -31,39 +35,52 @@
         </div>
     </article>
   <% end %>
-
   </section>
+
+<div class="background-container">
+    <section class="section-news">
+
+      <article class="container-news-portrait">
+        <h2 class="section-news-title">Derniers portraits</h2>
+
+        <div class="flex-box-grid-container">
+
+          <% @portrait.each do |portrait| %>
+            <div class="flex-box-grid-content">
+              <iframe frameborder="0" width="350px" height="350px" src=" <%= portrait.url %> "></iframe>
+              <h3 class="title-description"><%= portrait.name %></h3>
+              <p class="title-author">De <%= portrait.auteur %></p>
+              <h4 class="title-links-container">Dimensions</h4>
+                <div class="container-link-dimensions">
+                  <% portrait.variable.each do |variable| %>
+                    <p class="link-dimensions">#<%= link_to variable.name.downcase!, variable_path(variable) %></p>
+                  <% end %>
+                </div>
+            </div>
+          <% end %>
+        </div>
+
+      </article>
+
+      <article class="container-news-indef">
+
+        <h2 class="section-news-title">Dernières indéfinitions</h2>
+
+        <div class="flex-box-grid-container">
+          <% @indefinitions.each do |indefinition| %>
+            <div class="flex-box-grid-content">
+                <h3 class="title-description"><%= indefinition.name %></h3>
+                <p class="paragraph-news"><%= indefinition.texte %></p>
+                <% if !indefinition.url.blank? %>
+                  <iframe frameborder="0" width="400px" height="400px" src=" <%= indefinition.url %> "></iframe>
+                <% else indefinition.url.blank? %>
+
+                <% end %>
+            </div>
+          <% end %>
+        </div>
+      </article>
+
+    </section>
+  </div>
 </div>
-
-
-<table>
-<% @portrait.each do |portrait| %>
-  <tr>
-    <td><%= portrait.name %></td>
-    <td><%= portrait.auteur %></td>
-    <td><%= portrait.url %></td>
-    <td><% portrait.variable.each do |variable| %>
-      <%= link_to variable.name.downcase!, variable_path(variable) %>
-      <% end %> </td>
-    <td><%= link_to 'Show', portrait %></td>
-    <td><%= link_to 'Edit', edit_portrait_path(portrait) %></td>
-    <td><%= link_to 'Destroy', portrait, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-
-Dernieres indefinitions:
-
-<table>
-<% @indefinitions.each do |indefinition| %>
-  <tr>
-    <td><%= indefinition.name %></td>
-    <td><%= indefinition.texte %></td>
-    <td><%= indefinition.url %></td>
-    <td><%= link_to 'Show', indefinition %></td>
-    <td><%= link_to 'Edit', edit_indefinition_path(indefinition) %></td>
-    <td><%= link_to 'Destroy', indefinition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>

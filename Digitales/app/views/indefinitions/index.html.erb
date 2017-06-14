@@ -5,15 +5,30 @@
     <p class="paragraph">Cherchez un terme particulier, une dimensions ou mëme seulement une lettre. Si ce que vous cherchez n’est pas encore féférencer ici, soumettez nous votre mot et votre indéfinitions.</p>
   </div>
 
-    <% @indefinitions.each do |indefinition| %>
-        <%= indefinition.name %>
-        <%= indefinition.texte %>
-    <% end %>
-
     <div id="navigate">
-        <ul id="alphabet"></ul>
+      <ul id="alphabet"></ul>
+      <div class="btn-reset">
+        <%= link_to 'tout voir', "/indefinitions"%>
       </div>
-      <%= link_to 'reset', "/indefinitions"%>
+    </div>
+
+      <section class="section-indef">
+        <article class="container-news-indef">
+          <div class="flex-box-grid-container">
+            <% @indefinitions.each do |indefinition| %>
+              <div class="flex-box-grid-content">
+                  <h3 class="title-description"><%= indefinition.name %></h3>
+                  <p class="paragraph-news"><%= indefinition.texte %></p>
+                  <% if !indefinition.url.blank? %>
+                    <iframe frameborder="0" width="400px" height="400px" src=" <%= indefinition.url %> "></iframe>
+                  <% else indefinition.url.blank? %>
+
+                  <% end %>
+              </div>
+            <% end %>
+          </div>
+        </article>
+      </section>
 
 </div>
-<%= javascript_include_tag 'wiki', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'wiki', 'data-turbolinks-track': 'reload' %>

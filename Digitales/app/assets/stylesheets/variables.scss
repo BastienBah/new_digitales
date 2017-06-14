@@ -8,16 +8,19 @@
 
   .title {
     position: fixed;
-    width: 350px;
+    width: 960px;
     top: 50%;
-    left: 150px;
+    left: calc(50% - 480px);
     transform: translateY(-50%);
+    .paragraph {
+      width: 300px;
+    }
   }
 
   .container-var {
     float: right;
-    width: 60%;
-    padding: 150px 0;
+    width: 55%;
+    padding: 130px 0;
 
     button {
       color: $dark-blue;

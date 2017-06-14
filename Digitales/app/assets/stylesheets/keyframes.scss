@@ -1,11 +1,16 @@
-@keyframes down-up {
-  0% {
-    transform: translateY(-80%);
-  }
-  50% {
-    transform: translateY(100%);
-  }
-  100% {
-    transform: translateY(-80%);
-  }
+@-webkit-keyframes scroll-inner {
+    from {margin-top: 15%;}
+    to {margin-top: 50%;}
+}
+@keyframes scroll-inner {
+    from {margin-top: 15%;}
+    to {margin-top: 50%;}
+}
+@-webkit-keyframes scroll-mouse {
+    from {margin-top: 0;}
+    to {margin-top: 15px;}
+}
+@keyframes scroll-mouse {
+    from {margin-top: 0;}
+    to {margin-top: 15px;}
 }

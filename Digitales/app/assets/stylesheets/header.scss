@@ -7,10 +7,8 @@ header {
   z-index: 9;
   vertical-align: bottom;
   padding: 25px;
-
   ul {
     width: 100%;
-
     li {
       font-size: 14px;
       position: relative;
@@ -18,27 +16,28 @@ header {
       list-style: none;
       display: inline;
       margin: 0 25px;
-      float: right;
       padding: 0;
       color: $dark-blue;
-      &::after {
-        content: '';
-        position: absolute;
-        width: 0%;
-        height: 10px;
-        background: $light-blue;
-        opacity: .7;
-        right: 0;
-        bottom: 5px;
-        transition: .35s linear;
-        z-index: -1;
-      }
-
       &:first-child {
         font-weight: 600;
         font-size: 20px;
       }
-      
+    }
+  }
+  li {
+    &:nth-child(2), &:nth-child(3), &:nth-child(4) {
+      &::after {
+        content: '';
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        background: $dark-blue;
+        right: 0;
+        transition: .35s linear;
+        z-index: -1;
+        bottom: -5px;
+        box-sizing: content-box;
+      }
       &:hover {
         &::after {
           width: 100%;
