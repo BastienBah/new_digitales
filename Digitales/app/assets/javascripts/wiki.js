@@ -26,9 +26,9 @@ function layoutCharArray() {
 
   for (i = 0; i < alphabet.length; i++) {
     if(current_path == alphabet[i]){
-      nameList = "<li class='active'>" + "<a href='" + path + alphabet[i] + "'>" + alphabet[i] + "</a>" + "</li>";
+      nameList = "<li class='active'>" + "<a href='" + path + alphabet[i] + "';#down>" + alphabet[i] + "</a>" + "</li>";
     } else {
-      nameList = "<li>" + "<a href='" + path + alphabet[i] + "'>" + alphabet[i] + "</a>" + "</li>";
+      nameList = "<li>" + "<a href='" + path + alphabet[i] + ";#down'>" + alphabet[i] + "</a>" + "</li>";
     }
     element.innerHTML += nameList;
   }
