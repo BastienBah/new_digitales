@@ -23,7 +23,7 @@ end%>
             <% @indefinitions.each do |indefinition| %>
               <div class="flex-box-grid-content">
                   <h3 class="title-description"><%= indefinition.name %></h3>
-                  <p class="paragraph-news"><%= simple_format(indefinition.texte) %></p>
+                  <div class="paragraph-news"><%= simple_format(indefinition.texte) %></div>
                   <% if !indefinition.url.blank? %>
                     <iframe frameborder="0" width="400px" height="400px" src=" <%= indefinition.url %> "></iframe>
                   <% else indefinition.url.blank? %>
