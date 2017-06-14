@@ -4,14 +4,16 @@ class IndefinitionsController < ApplicationController
   # GET /indefinitions
   # GET /indefinitions.json
   def index
-  if params[:variable]
+    if !params[:letter].blank?
+      letter = params[:letter]
+    @indefinitions = Indefinition.find_by_sql("SELECT * FROM indefinitions WHERE name LIKE '"+ letter +"%'" )
+  elsif params[:variable]
   variable = Variable.find(params[:variable])
   @indefinitions = variable.indefinitions
 
   #  @indefinitions = Indefinition.find_by_sql('SELECT "indefinitions".* FROM "indefinitions" INNER JOIN "variables_indefinitions" ON "indefinitions"."id" = "variables_indefinitions"."indefinition_id" WHERE "variables_indefinitions"."variable_id" ='+ params[:variable])
-
-  else
-    @indefinitions = Indefinition.all
+else
+    @indefinitions = Indefinition.find_by_sql("SELECT * FROM indefinitions ORDER BY name ASC")
   end
   end
 

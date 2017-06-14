@@ -7,6 +7,7 @@ class PortraitsController < ApplicationController
     if params[:variable]
       variable = Variable.find(params[:variable])
       @portraits = variable.portraits
+      @variable = variable
     else
       @portraits = Portrait.all
     end
