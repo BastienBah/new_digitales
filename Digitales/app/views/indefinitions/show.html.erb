@@ -15,5 +15,12 @@
   <%= @indefinition.url %>
 </p>
 
+<p>
+  <strong>Variable:</strong>
+  <% @indefinition.variable.each do |variable| %>
+        <%= link_to variable.name.downcase!, variable_path(variable) %>
+        <% end %>
+</p>
+
 <%= link_to 'Edit', edit_indefinition_path(@indefinition) %> |
 <%= link_to 'Back', indefinitions_path %>

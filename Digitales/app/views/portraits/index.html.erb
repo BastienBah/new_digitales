@@ -8,10 +8,10 @@
   <section class="section-container-portrait">
 
     <% @portraits.each do |portrait| %>
-        <!-- <%= portrait.name %>
+        <%= portrait.name %>
         <%= portrait.auteur %>
         <%= portrait.url %>
-        <%= portrait.description %> -->
+        <%= portrait.description %>
         <iframe frameborder="0" src=" <%= portrait.url %> "></iframe>
     <% end %>
 
