@@ -53,7 +53,7 @@
               <h4 class="title-links-container">Dimensions</h4>
                 <div class="container-link-dimensions">
                   <% portrait.variable.each do |variable| %>
-                    <p class="link-dimensions">#<%= link_to variable.name.downcase!, variable_path(variable) %></p>
+                    <p class="link-dimensions">#<%= link_to variable.name.downcase!, "/indefinitions?variable="+variable.id.to_s %></p>
                   <% end %>
                 </div>
             </div>

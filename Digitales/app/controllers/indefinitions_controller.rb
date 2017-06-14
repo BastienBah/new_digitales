@@ -10,6 +10,7 @@ class IndefinitionsController < ApplicationController
   elsif params[:variable]
   variable = Variable.find(params[:variable])
   @indefinitions = variable.indefinitions
+  @variable = variable
 
   #  @indefinitions = Indefinition.find_by_sql('SELECT "indefinitions".* FROM "indefinitions" INNER JOIN "variables_indefinitions" ON "indefinitions"."id" = "variables_indefinitions"."indefinition_id" WHERE "variables_indefinitions"."variable_id" ='+ params[:variable])
 else

@@ -1,7 +1,13 @@
+<% if @variable.nil?
+  var_intro = ""
+ else
+  var_intro = @variable.name
+end%>
+
 <div id="portrait">
 
   <section class="title">
-    <h1 class="section-title">Portraits</h1>
+    <h1 class="section-title"><%= var_intro %> Portraits</h1>
     <p class="paragraph">Choisissez la dimension qui vous intéresse, vous pourrez ensuite naviguer au travers des portraits ou des indéfinitions liées à ce thème.</p>
   </section>
 
