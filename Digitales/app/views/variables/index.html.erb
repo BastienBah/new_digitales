@@ -10,7 +10,9 @@
       <% @variables.each do |variable| %>
           <li><%= variable.name %></li>
           <button type="button" name="portraits">portraits</button>
+          <%= link_to "portraits", "/portraits?variable="+variable.name %>
           <button type="button" name="indef">Indéfinitions</button>
+          <%= link_to "indefinitions", "/indefinitions?variable="+variable.name %>
       <% end %>
     </ul>
   </div>

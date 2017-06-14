@@ -4,7 +4,13 @@ class PortraitsController < ApplicationController
   # GET /portraits
   # GET /portraits.json
   def index
-    @portraits = Portrait.all
+    if params[:variable]
+      variable = Variable.find(params[:variable])
+      @portraits = variable.portraits
+    else
+      @portraits = Portrait.all
+    end
+
   end
 
   # GET /portraits/1

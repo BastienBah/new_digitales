@@ -15,15 +15,15 @@
 
   <tbody>
     <% @portraits.each do |portrait| %>
-      <tr>
-        <td><%= portrait.name %></td>
-        <td><%= portrait.auteur %></td>
-        <td><%= portrait.url %></td>
-        <td><%= portrait.description %></td>
-        <td><%= link_to 'Show', portrait %></td>
-        <td><%= link_to 'Edit', edit_portrait_path(portrait) %></td>
-        <td><%= link_to 'Destroy', portrait, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <tr>
+      <td><%= portrait.name %></td>
+      <td><%= portrait.auteur %></td>
+      <td><%= portrait.url %></td>
+      <td><%= portrait.description %></td>
+      <td><%= link_to 'Show', portrait %></td>
+      <td><%= link_to 'Edit', edit_portrait_path(portrait) %></td>
+      <td><%= link_to 'Destroy', portrait, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>
