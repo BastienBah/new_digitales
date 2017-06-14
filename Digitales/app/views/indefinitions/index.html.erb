@@ -10,4 +10,10 @@
         <%= indefinition.texte %>
     <% end %>
 
+    <div id="navigate">
+        <ul id="alphabet"></ul>
+      </div>
+      <%= link_to 'reset', "/indefinitions"%>
+
 </div>
+<%= javascript_include_tag 'wiki', 'data-turbolinks-track': 'reload' %>
