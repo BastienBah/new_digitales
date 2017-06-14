@@ -1,29 +1,18 @@
-<p id="notice"><%= notice %></p>
+<div id="var">
 
-<h1>Variables</h1>
+  <div class="title">
+    <h1 class="section-title">Dimensions</h1>
+    <p class="paragraph">Cherchez un terme particulier, une dimensions ou mëme seulement une lettre. Si ce que vous cherchez n’est pas encore féférencer ici, soumettez nous votre mot et votre indéfinitions.</p>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Titre</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="container-var">
+    <ul>
+      <% @variables.each do |variable| %>
+          <li><%= variable.name %></li>
+          <button type="button" name="portraits">portraits</button>
+          <button type="button" name="indef">Indéfinitions</button>
+      <% end %>
+    </ul>
+  </div>
 
-  <tbody>
-    <% @variables.each do |variable| %>
-      <tr>
-        <td><%= variable.name %></td>
-        <td><%= variable.description %></td>
-        <td><%= link_to 'Show', variable %></td>
-        <td><%= link_to 'Edit', edit_variable_path(variable) %></td>
-        <td><%= link_to 'Destroy', variable, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Variable', new_variable_path %>
+</div>

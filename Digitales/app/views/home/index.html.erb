@@ -1,6 +1,40 @@
-YO TOUT LE MONDE
+<div id="home">
 
-Derniers portraits:
+  <section class="section-landing">
+    <h1 class="section-title-home">digitales c'est</h1>
+    <p class="paragraphe-home">Digitales est une plateforme qui rassemble des récits témoignant de l’impact du numérique dans la vie de chacun. C’est une invitation a explorer l’aventure numérique au travers d’une multitude de portraits internationaux.</p>
+    <%= image_tag "down.png", :class => "down" %>
+  </section>
+
+  <section class="section-presentation">
+
+  <%= link_to  '/portraits' do %>
+    <article class="container-portrait">
+        <div class="content-text">
+          <h2 class="section-title">les portraits</h2>
+          <p class="paragraph">Choisissez la dimension qui vous intéresse, vous pourrez ensuite naviguer au travers des portraits ou des indéfinitions liées à ce thème.</p>
+        </div>
+        <div class="content-img" data-parallax="3" style="transform: translateY(24px);">
+          <%= image_tag 'portrait-show.png' %>
+        </div>
+    </article>
+  <% end %>
+
+  <%= link_to  '/indefinitions' do %>
+    <article class="container-indef">
+        <div class="content-img" data-parallax="1" style="transform: translateY(24px);">
+          <%= image_tag 'indef-show.jpg' %>
+        </div>
+        <div class="content-text">
+          <h2 class="section-title">les indéfinitions</h2>
+          <p class="paragraph">Cherchez un terme particulier, une dimensions ou mëme seulement une lettre. Soumettez nous votre mot et votre indéfinition si vous ne la trouver pas ici.</p>
+        </div>
+    </article>
+  <% end %>
+
+  </section>
+</div>
+
 
 <table>
 <% @portrait.each do |portrait| %>

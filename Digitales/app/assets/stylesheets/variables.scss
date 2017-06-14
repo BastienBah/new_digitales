@@ -1,3 +1,47 @@
 // Place all the styles related to the Variables controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "colors";
+
+#var {
+
+  .title {
+    position: fixed;
+    width: 350px;
+    top: 50%;
+    left: 150px;
+    transform: translateY(-50%);
+  }
+
+  .container-var {
+    float: right;
+    width: 60%;
+    padding: 150px 0;
+
+    button {
+      color: $dark-blue;
+      text-transform: uppercase;
+      background: transparent;
+      padding: 20px;
+      margin: 0 50px;
+      border: none;
+      opacity: 0;
+    }
+
+    li {
+      font-size: 94px;
+      line-height: 90px;
+      list-style: none;
+      font-weight: 100;
+      pointer: cursor;
+      color: $dark-blue;
+
+      &:hover {
+        button {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
