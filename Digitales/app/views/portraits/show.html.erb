@@ -20,5 +20,13 @@
   <%= @portrait.description %>
 </p>
 
+<p>
+  <strong>Variable:</strong>
+  <% @portrait.variable.each do |variable| %>
+        <%= link_to variable.name.downcase!, variable_path(variable) %>
+        <% end %>
+</p>
+
+
 <%= link_to 'Edit', edit_portrait_path(@portrait) %> |
 <%= link_to 'Back', portraits_path %>
