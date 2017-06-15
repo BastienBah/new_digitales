@@ -9,20 +9,23 @@ end%>
     <p class="paragraph">Choisissez la dimension qui vous intéresse, vous pourrez ensuite naviguer au travers des portraits ou des indéfinitions liées à ce thème.</p>
   </section>
 
-  <section class="section-container-portrait">
+  <section class="flex-box-grid-container-portrait">
 
-    <% @portraits.each do |portrait| %>
-    <%= link_to portrait do %>
-      <div class="portrait-img">
-        <% if !portrait.image.nil? %>
-          <%= image_tag(portrait.image) %>
-        <%end%>
-      </div>
-        <!-- <iframe heigth="200px" width="200px" frameborder="0" src=" <%= portrait.url %> "></iframe> -->
-        <% end %>
-
-    <% end %>
-
+      <% @portraits.each do |portrait| %>
+          <div class="flex-box-grid-content-portrait">
+            <%= link_to portrait_path(portrait) do %>
+            <div class="portrait-img">
+              <% if !portrait.image.nil? %>
+                <%= image_tag(portrait.image) %>
+              <%end%>
+            </div>
+            <span>
+              <h3 class="title-description"><%= portrait.name %></h3>
+              <p class="title-author">De <%= portrait.auteur %></p>
+            </span>
+            <% end %>
+          </div>
+      <% end %>
   </section>
 
 </div>

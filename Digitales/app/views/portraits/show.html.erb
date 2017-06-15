@@ -1,19 +1,23 @@
 <div id="show-portrait">
-  
-  <h2 class="section-title"><%= @portrait.name %></h2>
-  <h3 class="title-author"><%= @portrait.auteur %></h3>
-
-  <iframe frameborder="0" src=" <%= @portrait.url %> "></iframe>
-
-    <strong>Description:</strong>
-    <p class="paragraph"><%= @portrait.description %></p>
-
-    <strong>Variable:</strong>
-    <% @portrait.variable.each do |variable| %>
-          <%= link_to variable.name.downcase!, variable_path(variable) %>
-    <% end %>
-  </p>
-
-
-  <%= link_to 'Back', portraits_path %>
+  <div class="btn-return">
+    <%= link_to 'Retour aux portraits', portraits_path %>
+  </div>
+  <section class="section-video">
+    <iframe frameborder="0" width="960px" height="550px" src=" <%= @portrait.url %> "></iframe>
+  </section>
+  <section class="section-content">
+    <article class="title">
+      <h2 class="section-title"><%= @portrait.name %></h2>
+      <h3 class="title-author"><%= @portrait.auteur %></h3>
+    </article>
+    <article class="description">
+      <p class="paragraph"><%= @portrait.description %></p>
+    </article>
+    <article class="variables-list">
+      <h4 class="title-links-container">Dimensions</h4>
+        <% @portrait.variable.each do |variable| %>
+          <p class="link-dimensions"><%= link_to variable.name.downcase!, "/indefinitions?variable="+variable.id.to_s %></p>
+        <% end %>
+    </article>
+  </section>
 </div>
