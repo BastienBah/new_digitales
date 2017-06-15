@@ -58,12 +58,6 @@
 
               <h3 class="title-description"><%= portrait.name %></h3>
               <p class="title-author">De <%= portrait.auteur %></p>
-              <h4 class="title-links-container">Dimensions</h4>
-                <div class="container-link-dimensions">
-                  <% portrait.variable.each do |variable| %>
-                    <p class="link-dimensions"><%= link_to variable.name.downcase!, "/portraits?variable="+variable.id.to_s %></p>
-                  <% end %>
-                </div>
             </div>
           <% end %>
         </div>
