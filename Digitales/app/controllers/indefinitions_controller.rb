@@ -12,10 +12,11 @@ class IndefinitionsController < ApplicationController
   @indefinitions = variable.indefinitions
   @variable = variable
 
-  #  @indefinitions = Indefinition.find_by_sql('SELECT "indefinitions".* FROM "indefinitions" INNER JOIN "variables_indefinitions" ON "indefinitions"."id" = "variables_indefinitions"."indefinition_id" WHERE "variables_indefinitions"."variable_id" ='+ params[:variable])
+  #@indefinitions = Indefinition.find_by_sql('SELECT "indefinitions".* FROM "indefinitions" INNER JOIN "variables_indefinitions" ON "indefinitions"."id" = "variables_indefinitions"."indefinition_id" WHERE "variables_indefinitions"."variable_id" ='+ params[:variable])
 else
     @indefinitions = Indefinition.find_by_sql("SELECT * FROM indefinitions ORDER BY name ASC")
   end
+
   end
 
   # GET /indefinitions/1

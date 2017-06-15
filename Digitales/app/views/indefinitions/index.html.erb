@@ -22,7 +22,12 @@ end%>
             <% @indefinitions.each do |indefinition| %>
               <div class="flex-box-grid-content">
                   <h3 class="title-description"><%= indefinition.name %></h3>
-                  <div class="paragraph-news"><%= simple_format(indefinition.texte) %></div>
+                  <div class="paragraph-news">
+                    <%= simple_format(indefinition.texte) %>
+                    <% indefinition.variable.each do |variable| %>
+                      <p class="link-dimensions"><%= link_to variable.name.downcase!, "/indefinitions?variable="+variable.id.to_s %></p>
+                    <% end %>
+                  </div>
                   <% if !indefinition.url.blank? %>
                     <iframe frameborder="0" width="400px" height="400px" src=" <%= indefinition.url %> "></iframe>
                   <% else indefinition.url.blank? %>
