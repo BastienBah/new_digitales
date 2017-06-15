@@ -1,6 +1,4 @@
-<% if @variable.nil?
-  var_intro = ""
- else
+<% unless @variable.nil?
   var_intro = @variable.name
 end%>
 
@@ -14,11 +12,13 @@ end%>
   <section class="section-container-portrait">
 
     <% @portraits.each do |portrait| %>
-        <%= portrait.name %>
-        <%= portrait.auteur %>
-        <%= portrait.url %>
-        <%= portrait.description %>
-        <iframe frameborder="0" src=" <%= portrait.url %> "></iframe>
+    <%= link_to portrait do %>
+        <% if !portrait.image.nil? %>
+          <%= image_tag(portrait.image) %>
+        <%end%>
+        <iframe heigth="200px" width="200px" frameborder="0" src=" <%= portrait.url %> "></iframe>
+
+        <% end %>
     <% end %>
 
   </section>

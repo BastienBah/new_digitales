@@ -4,10 +4,13 @@
 @import "colors";
 
 #indef {
-
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  width: 960px;
+  margin: auto;
+  flex-direction: column;
   .title {
-    max-width: 960px;
-    margin: auto;
     .paragraph, .section-title {
       width: 350px;
       margin-left: 0px;
@@ -25,6 +28,7 @@
     width: 960px;
     margin: 50px auto;
     ul {
+      padding: 25px 0;
       display: -webkit-flex;
       display: -ms-flex;
       display: flex;
@@ -48,6 +52,7 @@
 .btn-reset {
   border: 1px solid $dark-blue;
   padding: 5px;
+  margin-top: 2em;
   font-weight: 100;
   width: 100px;
   text-align: center;

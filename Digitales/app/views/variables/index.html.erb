@@ -8,11 +8,11 @@
   <div class="container-var">
     <ul>
       <% @variables.each do |variable| %>
-          <li><%= variable.name %></li>
-          <button type="button" name="portraits">portraits</button>
-          <%= link_to "portraits", "/portraits?variable="+variable.id.to_s %>
-          <button type="button" name="indef">Indéfinitions</button>
-          <%= link_to "indefinitions", "/indefinitions?variable="+variable.id.to_s %>
+          <li>
+            <em><%= variable.name %></em>
+            <%= link_to "portraits", "/portraits?variable="+variable.id.to_s %>
+            <%= link_to "indefinitions", "/indefinitions?variable="+variable.id.to_s %>
+          </li>
       <% end %>
     </ul>
   </div>

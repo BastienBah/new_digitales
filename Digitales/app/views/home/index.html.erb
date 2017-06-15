@@ -47,13 +47,16 @@
 
           <% @portrait.each do |portrait| %>
             <div class="flex-box-grid-content">
-              <iframe frameborder="0" width="350px" height="350px" src=" <%= portrait.url %> "></iframe>
+              <% if !portrait.url.blank? %>
+                <iframe frameborder="0" width="350px" height="350px" src=" <%= portrait.url %> "></iframe>
+              <% else portrait.url.blank? %>
+              <% end %>
               <h3 class="title-description"><%= portrait.name %></h3>
               <p class="title-author">De <%= portrait.auteur %></p>
               <h4 class="title-links-container">Dimensions</h4>
                 <div class="container-link-dimensions">
                   <% portrait.variable.each do |variable| %>
-                    <p class="link-dimensions">#<%= link_to variable.name.downcase!, "/indefinitions?variable="+variable.id.to_s %></p>
+                    <p class="link-dimensions"><%= link_to variable.name.downcase!, "/indefinitions?variable="+variable.id.to_s %></p>
                   <% end %>
                 </div>
             </div>
@@ -76,6 +79,12 @@
                 <% else indefinition.url.blank? %>
 
                 <% end %>
+                <h4 class="title-links-container">Dimensions</h4>
+                  <div class="container-link-dimensions">
+                    <% indefinition.variable.each do |variable| %>
+                      <p class="link-dimensions"><%=link_to variable.name.downcase!, variable_path(variable)%></p>
+                    <% end %>
+                  </div>
             </div>
           <% end %>
         </div>

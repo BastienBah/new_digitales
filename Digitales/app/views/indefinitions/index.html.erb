@@ -1,8 +1,7 @@
-<% if @variable.nil?
-  var_intro = ""
- else
+<% unless @variable.nil?
   var_intro = @variable.name
 end%>
+
 <div id="indef">
 
   <div class="title">

@@ -7,9 +7,8 @@
   display: -ms-flex;
   display: flex;
   width: 960px;
-  justify-content: flex-end;
-  align-items: center;
   margin: auto;
+  flex-direction: column;
   .title {
     .paragraph, .section-title {
       width: 350px;
@@ -32,7 +31,11 @@
     display: flex;
     flex-wrap: wrap;
     iframe {
-      width: calc(100%/2);
+      margin: 10px;
+      height: 300px;
+    }
+    image {
+      width: calc(100%/3);
     }
   }
 }

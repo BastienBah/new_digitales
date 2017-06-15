@@ -1,32 +1,19 @@
-<p id="notice"><%= notice %></p>
+<div id="show-portrait">
+  
+  <h2 class="section-title"><%= @portrait.name %></h2>
+  <h3 class="title-author"><%= @portrait.auteur %></h3>
 
-<p>
-  <strong>Titre:</strong>
-  <%= @portrait.name %>
-</p>
+  <iframe frameborder="0" src=" <%= @portrait.url %> "></iframe>
 
-<p>
-  <strong>Auteur:</strong>
-  <%= @portrait.auteur %>
-</p>
+    <strong>Description:</strong>
+    <p class="paragraph"><%= @portrait.description %></p>
 
-<p>
-  <strong>Url:</strong>
-  <%= @portrait.url %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @portrait.description %>
-</p>
-
-<p>
-  <strong>Variable:</strong>
-  <% @portrait.variable.each do |variable| %>
-        <%= link_to variable.name.downcase!, variable_path(variable) %>
-        <% end %>
-</p>
+    <strong>Variable:</strong>
+    <% @portrait.variable.each do |variable| %>
+          <%= link_to variable.name.downcase!, variable_path(variable) %>
+    <% end %>
+  </p>
 
 
-<%= link_to 'Edit', edit_portrait_path(@portrait) %> |
-<%= link_to 'Back', portraits_path %>
+  <%= link_to 'Back', portraits_path %>
+</div>

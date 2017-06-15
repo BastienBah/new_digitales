@@ -9,6 +9,7 @@
   .title {
     position: fixed;
     width: 960px;
+    z-index: -999;
     top: 50%;
     left: calc(50% - 480px);
     transform: translateY(-50%);
@@ -16,12 +17,15 @@
       width: 300px;
     }
   }
-
+  .container-var ul {
+    margin: 42vh 0;
+    li {
+      margin: 5em 0;
+    }
+  }
   .container-var {
     float: right;
     width: 55%;
-    padding: 130px 0;
-
     button {
       color: $dark-blue;
       text-transform: uppercase;
@@ -31,15 +35,24 @@
       border: none;
       opacity: 0;
     }
-
-    li {
+    a {
+      margin: 0 50px;
+      line-height: 50px;
+      text-transform: capitalize;
+      color: $dark-blue;
+      transition: .25s linear;
+      font-weight: 100;
+      &:hover {
+        color: $light-blue;
+      }
+    }
+    li em {
       font-size: 94px;
-      line-height: 90px;
       list-style: none;
       font-weight: 100;
       pointer: cursor;
       color: $dark-blue;
-
+      display: block;
       &:hover {
         button {
           opacity: 1;

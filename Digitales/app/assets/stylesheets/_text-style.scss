@@ -3,8 +3,6 @@
 h1, h2, h3, h4, h5, p, a, label, ul, li {
   font-family: 'Maison Neue', sans-serif;
   text-decoration: none;
-  margin: inherit;
-  padding: inherit;
   line-height: 1;
 }
 
@@ -25,7 +23,8 @@ h1, h2, h3, h4, h5, p, a, label, ul, li {
   font-size: 28px;
   text-transform: uppercase;
   font-weight: 400;
-  line-height: 90px;
+  line-height: 40px;
+  margin-bottom: 25px;
 }
 
 .section-news-title {
@@ -48,12 +47,14 @@ h1, h2, h3, h4, h5, p, a, label, ul, li {
   font-size: 14px;
   font-weight: 200;
   line-height: 25px;
-  padding-top: 20px;
+  padding-top: 10px;
   color: $grey;
 }
 
 .link-dimensions {
   text-transform: capitalize;
+  text-decoration: underline;
+  text-align: left;
   color: $grey !important;
   font-size: 12px;
   font-weight: 100;
@@ -62,7 +63,6 @@ h1, h2, h3, h4, h5, p, a, label, ul, li {
   vertical-align: bottom;
   align-content: center;
   align-items: center;
-  margin: 5px 5px;
   &:visited {
     color: inherit;
   }
