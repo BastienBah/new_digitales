@@ -12,7 +12,12 @@ class PortraitsController < ApplicationController
       @portraits = Portrait.all
     end
 
+    if params[:indefinition]
+      indefinition = Indefinition.find(params[:indefinition])
+      @portraits = indefinition.portraits
+      @indefinitions = indefinition
   end
+end
 
   # GET /portraits/1
   # GET /portraits/1.json
