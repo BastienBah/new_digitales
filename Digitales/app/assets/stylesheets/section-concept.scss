@@ -17,7 +17,7 @@
 .section-presentation {
   margin: 150px auto;
   position: relative;
-  max-width: 960px;
+  width: 100%;
   .paragraph, .section-title {
     width: 300px;
   }
@@ -37,25 +37,31 @@
     content: '';
     position: absolute;
     width: 300px;
-    height: 150px;
+    height: 50%;
     background: $white;
     z-index: -1;
   }
 }
 
 .container-portrait {
+  position: relative;
+  width: 960px;
+  margin: 50px auto;
   .content-text {
     &::before {
-      left: -30px;
-      top: 100px;
+      left: -50px;
+      top: 60px;
     }
   }
 }
 .container-indef {
+  position: relative;
+  width: 960px;
+  margin: 50px auto;
   .content-text {
     &::before {
       right: -30px;
-      bottom: 130px;
+      bottom: 160px;
     }
   }
 }
