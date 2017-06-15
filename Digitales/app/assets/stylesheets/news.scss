@@ -23,6 +23,14 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
+  .title-description {
+    padding-bottom: 25px;
+  }
+  div.paragraph-news {
+    p {
+      line-height: 18px;
+    }
+  }
 }
 
 .title-description, .title-description {
@@ -40,12 +48,14 @@
 
 
 div.flex-box-grid-content {
+  width: 45%;
+  min-width: 390px;
+  padding: 25px;
   background: white;
   margin: 50px 0;
   height: auto;
-  padding: 20px;
   box-shadow: 0px 30px 60px 0px rgba($black, .1);
-  }
   iframe {
-    padding: 20px;
+    display: block;
+  }
   }

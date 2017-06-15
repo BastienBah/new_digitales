@@ -30,11 +30,17 @@
     display: -ms-flex;
     display: flex;
     flex-wrap: wrap;
+    .paragraph-news {
+      padding-top: 20px;
+    }
     iframe {
       margin: 10px;
       height: 300px;
+      img {
+        display: block;
+      }
     }
-    image {
+    .portrait-img {
       width: calc(100%/3);
     }
   }

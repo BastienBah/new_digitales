@@ -48,7 +48,7 @@
           <% @portrait.each do |portrait| %>
             <div class="flex-box-grid-content">
               <% if !portrait.url.blank? %>
-                <iframe frameborder="0" width="350px" height="350px" src=" <%= portrait.url %> "></iframe>
+                <iframe frameborder="0" width="100%" height="350px" src=" <%= portrait.url %> "></iframe>
               <% else portrait.url.blank? %>
               <% end %>
               <h3 class="title-description"><%= portrait.name %></h3>
@@ -73,7 +73,7 @@
           <% @indefinitions.each do |indefinition| %>
             <div class="flex-box-grid-content">
                 <h3 class="title-description"><%= indefinition.name %></h3>
-                <p class="paragraph-news"><%= indefinition.texte %></p>
+                <div class="paragraph-news"><%= simple_format(indefinition.texte)%></div>
                 <% if !indefinition.url.blank? %>
                   <iframe frameborder="0" width="400px" height="400px" src=" <%= indefinition.url %> "></iframe>
                 <% else indefinition.url.blank? %>
